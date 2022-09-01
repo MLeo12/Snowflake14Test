@@ -39,7 +39,7 @@ view: users {
       quarter,
       year
     ]
-    sql: dateadd(days, 3097, to_date(${TABLE}."CREATED_AT")) ;;
+    sql: dateadd(days, 3997, to_date(${TABLE}."CREATED_AT")) ;;
   }
 
   dimension: epoch_at {
