@@ -28,6 +28,20 @@ view: users {
     sql: ${TABLE}."CREATED_AT" ;;
   }
 
+  dimension_group: date_add {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: dateadd(days, 3097, to_date(${TABLE}."CREATED_AT")) ;;
+  }
+
   dimension: epoch_at {
     type: number
     sql: ${TABLE}."EPOCH_AT" ;;
